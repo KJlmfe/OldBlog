@@ -2,14 +2,10 @@
 layout: post
 title: "GTD简介"
 description: ""
-category: 
+category: "时间管理"
 tags: []
 ---
 {% include JB/setup %}
-
-
-
-# GTD简介 
 
 ### 引言（为什么介绍GTD？）  
 

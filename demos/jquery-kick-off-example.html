@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>jQuery小动画</title>		
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() 
+			{
+			    var count = 0;
+					$("#one").bind("click",function()
+					{
+					    $("#block").css("left","100");
+					    $("#block").css("opacity","0");
+					    $("#block").css("background-color","white");
+						  $("#block").animate({opacity: "1",left: "200px"},1500)
+					});
+			    $("#two").bind("click",function() 
+			    {
+				      $("#block").css("opacity","0")
+				      $("#block").css("background-color", "red")
+				      $("#block").animate({opacity: "1"}, 1000)
+				  });
+			    $("#three").click(function()
+			    {
+				      $("#block").animate({opacity: "0"}, 1000)
+				  });
+					$("#four").click(function() 
+					{
+				      count++;
+						  count = count % 3;
+						  if( count == 1 )
+						  {
+							    $("#block").css("left","100");
+							    $("#block").css("opacity","0");
+							    $("#block").css("background-color","white");
+						      $("#block").animate({opacity: "1",left: "200px"},1500)
+					  	}
+						  if( count == 2 )
+						  {
+						      $("#block").css("opacity","0")
+				          $("#block").css("background-color", "red")
+				          $("#block").animate({opacity: "1"}, 1000)
+				      }
+				      if( count == 0 )
+				      {
+				          $("#block").animate({opacity: "0"}, 1000)
+				      }
+				  });
+			});
+		</script>
+		<style type="text/css">
+		 		#block{
+					height: 200px;
+					width: 200px;
+					position: absolute;
+					left: 100px;
+					border: solid;
+					opacity: 0;
+				}
+		</style>
+	</head>
+	<body>
+		<button id="one">淡入</button>
+		<button id="two">变红</button>
+		<button id="three">消失</button>
+		<button id="four">只点我</button>
+		<div id="block"></div>
+	</body>
+</html>
